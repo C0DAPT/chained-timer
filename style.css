@@ -1,0 +1,283 @@
+/*  Base Styling */
+body {
+    background-color: #0d0d0d;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    display: grid;
+    place-items: center;
+    margin: 0;
+    min-height: 100vh;
+}
+.label {
+ position: absolute;
+ top: 30%;
+ font-size: 20px;
+}
+.progressRing {
+    position: absolute;
+    bottom: 11%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.progressBg {
+    fill: none;
+    stroke: #333;
+    stroke-width: 15;
+}
+
+.progressCircle {
+    fill: none;
+    stroke: orange;
+    stroke-width: 15;
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: center;
+    transition: stroke-dashoffset 1s linear;
+}
+
+/* Apply smooth shadows + clean whitesmoke */
+* {
+    color: whitesmoke;
+    box-sizing: border-box;
+}
+
+/* Container with a soft glassmorphic look */
+.world {
+    position: relative;
+    display: grid;
+    place-items: center;
+    height: 650px;
+    width: 680px;
+    background-color: rgba(20, 20, 20, 0.6);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(138, 82, 14, 0.15);
+}
+
+/*  Clock Holder */
+.holder {
+    position: absolute;
+    top: 3%;
+    display: flex;
+    gap: 12px;
+}
+
+/*  Clock container */
+.clockContainer {
+    display: flex;
+    gap: 12px;
+}
+
+/* Clock dot */
+.clock {
+    background-color: rgba(255, 255, 255, 0.04);
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    border: 1.5px solid orange;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+/* Add clock button */
+.addClock {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid white;
+    height: 24px;
+    width: 44px;
+    border-radius: 10%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.addClock:hover {
+    background-color: rgba(255, 165, 0, 0.3);
+    transform: scale(1.05);
+}
+
+.timeDisplay {
+    position: absolute;
+    top: 10%;
+    display: grid;
+    place-items: center;
+    font-size: 80px;
+    height: 100px;
+    width: 340px;
+    border: 2px solid orange;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 6px 20px rgba(255, 140, 0, 0.3);
+}
+
+/*  Visual circle  */
+.visualDisplay {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    bottom: 13%;
+    height: 330px;
+    width: 330px;
+    border-radius: 50%;
+    box-shadow: 0 0 30px #e27b054d;
+}
+img {
+    position: absolute;
+    bottom: 20%;
+    height: 250px;
+    width: 250px;
+}
+.darkwall {
+    position: absolute;
+    top: 0;
+   height: 100%;
+    width: 100%;
+    background: rgba(3,3,3, 0.351);
+    border-radius: 50%;
+}
+/*  Timer control buttons */
+.buttons {
+    position: absolute;
+    bottom: 2%;
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    height: 40px;
+    width: 80px;
+    border: 1px solid orange;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.05);
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: bold;
+    color: orange;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 2px 8px rgba(255, 140, 0, 0.15);
+}
+
+.btn:hover {
+    background-color: orange;
+    color: black;
+    transform: scale(1.05);
+}
+
+/* New Time popup */
+.addTime {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    height: 200px;
+    width: 0px;
+    overflow: hidden;
+    transition: width 0.3s ease;
+    border-radius: 10px;
+}
+
+/*  Expands when active */
+.show {
+    width: 200px;
+}
+
+/* Time input */
+input {
+    width: 200px;
+    height: 200px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid orange;
+    font-size: 100px;
+    text-align: center;
+    border-radius: 12px;
+    color: white;
+    z-index: 2;
+}
+
+.newTime {
+    position: absolute;
+    background-color: transparent;
+    bottom: 2%;
+    z-index: 2;
+}
+@media (max-width: 600px) {
+    .world {
+        width: 90vw;
+        height: 100%;
+        padding: 20px;
+        gap: 10px;
+    }
+
+    .timeDisplay {
+        font-size: 48px;
+        width: 90%;
+        height: 80px;
+        top: 8%;
+    }
+
+    .holder {
+        top: 2%;
+        align-items: center;
+        gap: 8px;
+    }
+  
+    .clockContainer {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+    .visualDisplay {
+        height: 255px;
+        width: 255px;
+        bottom: 19%;
+    }
+
+    img {
+        height: 180px;
+        width: 180px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+        bottom: 1%;
+    }
+
+    .btn {
+        width: 100px;
+        height: 36px;
+        font-size: 14px;
+    }
+
+    input {
+        width: 160px;
+        height: 160px;
+        font-size: 64px;
+
+    }
+
+    .addTime {
+        height: 180px;
+    }
+    .show{
+        width: 180px;
+    }
+    .newTime{
+        bottom: 7%;
+    }
+
+    .label {
+        top: 25%;
+        font-size: 16px;
+    }
+
+    .progressRing {
+        bottom: 10%;
+        transform: translateX(-50%) scale(0.85);
+    }
+}
+

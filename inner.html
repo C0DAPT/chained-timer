@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="world">
+  
+  <section class="holder">
+
+    <div class="clockContainer">
+    <div  class="clock" data-score="30"></div>
+    <div  class="clock" data-score="5"></div>
+    <div  class="clock" data-score="30"></div>
+    </div>
+
+    <button class="addClock">Add</button> 
+
+  </section>
+<div class="label">Focus</div>
+<svg class="progressRing" width="360" height="360">
+  <circle class="progressBg" cx="180" cy="180" r="160" />
+  <circle class="progressCircle" cx="180" cy="180" r="160" />
+</svg>
+
+<div class="timeDisplay">00:00</div>
+<div class="visualDisplay">
+<img src="" alt="" class="imgs">
+<div class="darkwall"></div>
+</div>
+
+    <div class="buttons">
+        <button class="btn">start</button>
+        <button class="btn">reset</button>
+    </div>
+
+     <section class="addTime">
+
+    <input type="number" id="setTime" max="99" min="0">
+    <button class="btn newTime">new time</button>
+
+     </section>
+
+
+    <script src="app.js"></script>
+ </main>
+   
+</body>
+</html>
