@@ -137,7 +137,7 @@ addClockbtn.addEventListener("click", function () {
 
     const newClock = document.createElement("div");
     newClock.className = "clock";
-    newClock.dataset.score = 2;
+    newClock.dataset.score = 5;
 
     clockContainer.appendChild(newClock);
     setupClockClick(newClock);

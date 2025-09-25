@@ -48,7 +48,7 @@ body {
     position: relative;
     display: grid;
     place-items: center;
-    height: 650px;
+    height: 630px;
     width: 680px;
     background-color: rgba(20, 20, 20, 0.6);
     backdrop-filter: blur(6px);
